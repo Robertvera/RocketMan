@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="../vendor/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    
-    <!--
+  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
+  <link rel="stylesheet" href="../vendor/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
+
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -22,25 +23,60 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>React App</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <script src="vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </body>
+    <section class="container card">
+        <div class="row">
+          <h1 class="col-12">Departures Inf.</h1>
+          <img src="../images/maps.png" alt="" class="col-sm-12 col-md-6 col-lg-6">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+              <h4>full name</h4>
+              <p>Kennedy Space Center Historic Launch Complex 39A</p>
+              <h4>Region</h4>
+              <p>Florida</p>
+              <h4>Description</h4>
+              <p>NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions .....</p>
+          </div>
+        </div>
+    </section>
+
+    <section class="container card">
+      <div class="row">
+          <h1 class="col-12">Checkout Inf.</h1>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <p>Destiny</p>
+            <h3>Jupiter</h3>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+              <p>Departure from:</p>
+              <p id="departure">Kennedy Space Center Historic Launch Complex 39A</p>
+          </div>
+
+          <div class="col-12">
+            <p>Date</p>
+            <h3>27/08/2020</h3>
+          </div>
+          
+      </div>
+    </section>
+
+
+
+  </div>
+  
+  <script src="../vendor/bootstrap/4.0.0/jquery/bootstrap.min.js"></script>
+  <script src="../vendor/poper/1.12.9/umd/popper.min.js"></script>
+  <script src="../src/api/rocket-api-1.0.0.js"></script>
+  <script src="../vendor/bootstrap/4.0.0/jquery/bootstrap.min.js"></script>
+  <script src="../src/api/main.js"></script>
+</body>
+
 </html>
