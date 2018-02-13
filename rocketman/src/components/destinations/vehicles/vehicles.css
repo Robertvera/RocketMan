@@ -1,0 +1,15 @@
+/* section-select */
+.section-select .card {
+    border-radius: 0;
+    padding: 0.7rem;
+    border: 1px solid #6f6f6f;
+    background: transparent;
+}
+.section-select .card-body {
+    background:#283645;
+}
+.section-select .main-info-card {
+    color: #a1a8c3;
+    font-size: 2rem;
+    font-weight: bold;
+}

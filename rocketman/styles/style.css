@@ -41,69 +41,6 @@ nav.bg-dark {
 }
 
 
-/* section-logo */
-.section-logo {
-    margin-top: 8rem;
-}
-.section-logo .subsection-subtitle{
-    border-top: 1px solid #8c96bb;
-}
-.section-logo .text-main-color {
-    color:#8c96bb
-}
-
-/* section-destination */
-.section-destination .card {
-    border-radius: 0;
-    padding: 0.7rem;
-    border: 1px solid #6f6f6f;
-    background: transparent;
-}
-.section-destination .card:hover {
-    border: 1px solid #bbbbbb;
-    box-shadow: 2px 3.5px 77.5px rgba(228, 228, 228, 0.10);
-    transition: box-shadow 0.3s ease-in-out;
-    transition: border 0.3s ease-in-out;
-}
-.section-destination .btn-primary {
-    border-radius: 0;
-}
-.section-destination .mars.card-body {
-    background: url("../public/images/mars.jpg") no-repeat center;
-    background-size: cover;
-} 
-.section-destination .moon.card-body {
-    background: url("../public/images/moon2.png") no-repeat center;
-    background-size: cover;
-} 
-.section-destination .jupiter.card-body {
-    background: url("../public/images/jupiter.png") no-repeat center;
-    background-size: cover;
-} 
-.section-destination .uranus.card-body {
-    background: url("../public/images/uranus.png") no-repeat center;
-    background-size: cover;
-} 
-.section-destination .card-title {
-    color: #d0cfc5;
-}
-.section-destination .btn-primary {
-    background-color: #283645;
-    border-color: #283645;
-}
-
-/* section-departures */
-.section-departures .card {
-    padding: 0.7rem;
-    border: 1px solid #6f6f6f;
-    background: transparent;
-    border-radius: 0;
-}
-.subsection-departures-information {
-    padding: 0.7rem;
-    background:#283645;
-    height: 100%;
-}
 
 /* section-button */
 .section-button{
@@ -112,42 +49,6 @@ nav.bg-dark {
     width: 100%;
 }
 
-/* section-select */
-.section-select .card {
-    border-radius: 0;
-    padding: 0.7rem;
-    border: 1px solid #6f6f6f;
-    background: transparent;
-}
-.section-select .card-body {
-    background:#283645;
-}
-.section-select .main-info-card {
-    color: #a1a8c3;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* section-summary */
-.section-summary h3 {
-    color: #a1a8c3;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.section-summary-info{
-    border-radius: 0;
-    padding: 0.7rem;
-    border: 1px solid #6f6f6f;
-    background: transparent;
-}
-.section-summary-info .section-summary-box {
-    background: #283645;
-    border-radius:0;
-    padding: 0.7rem;
-}
-
-
-  
   /* purchase ok */
   @keyframes stroke {
     100% {

@@ -1,0 +1,17 @@
+/* section-summary */
+.section-summary h3 {
+    color: #a1a8c3;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.section-summary-info{
+    border-radius: 0;
+    padding: 0.7rem;
+    border: 1px solid #6f6f6f;
+    background: transparent;
+}
+.section-summary-info .section-summary-box {
+    background: #283645;
+    border-radius:0;
+    padding: 0.7rem;
+}

@@ -1,0 +1,12 @@
+/* section-departures */
+.section-departures .card {
+    padding: 0.7rem;
+    border: 1px solid #6f6f6f;
+    background: transparent;
+    border-radius: 0;
+}
+.subsection-departures-information {
+    padding: 0.7rem;
+    background:#283645;
+    height: 100%;
+}
