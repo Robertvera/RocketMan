@@ -4,12 +4,6 @@
  * @version 1.0.0
  */
 
-/**
- * Spotify API client.
- *
- * @version 1.0.0
- */
-
 let rocketApi;
 
 (function () {
@@ -34,9 +28,10 @@ let rocketApi;
 
             let path = this.baseUrl + "rockets"
 
-            return this.call(path).then(res => {
-                return res
-            })
+            // return this.call(path).then(res => {
+            //     return res
+            // })
+            call(this.path)
         },
 
         /**
@@ -97,8 +92,5 @@ let rocketApi;
                 return res
             })
         }
-
-         
-
     };
 })();

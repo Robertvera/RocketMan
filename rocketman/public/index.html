@@ -11,7 +11,7 @@
     -->
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="../vendor/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/ionicons/2.0.1/css/ionicons.css">
   <link rel="stylesheet" href="../styles/style.css">
@@ -114,27 +114,36 @@
   </section>
 
   <!-- Localization section -->
-  <section class="container section-departures mt-5">
-    <div class="subsection-departures">
+
+
+  <section class="container section-select mt-5">
       <h1 class="text-white">Departures information</h1>
-      <div class="row mt-4">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <img class="img-fluid" src="./images/map.png">
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 card">
-          <div class="subsection-departures-information">
-            <h4>Departure localization</h4>
-            <p>Kenedy Space</p>
-            <h4>Region</h4>
-            <p>Florida</p>
-            <h4>Description</h4>
-            <p>NASA historic launch pad that launched most of the Saturn. NASA historic launch pad that launched most of the
-              Saturn. </p>
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="no-padding col-sm-12 col-md-3 col-lg-3">
+                <img class="img-fluid" src="images/map.png" alt="map location">
+              </div>
+              <div class="info col-sm-12 col-md-9 col-lg-9">
+                <div class="container">
+                  <div class="row">
+                      <div class="subsection-departures-information">
+                    <h4>Departure localization</h4>
+                    <p>Kenedy Space</p>
+                    <h4>Region</h4>
+                    <p>Florida</p>
+                    <h4>Description</h4>
+                    <p>NASA historic launch pad that launched most of the Saturn. NASA historic launch pad that launched most of the Saturn.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- section-select -->
   <section class="container section-select mt-5">
@@ -197,28 +206,7 @@
     </div>
   </section>
 
-  <!-- purchase summary -->
-  <section class="section-summary container mt-5">
-    <h1 class="text-white">Checkout Information</h1>
-    <section class="section-summary-info mt-4">
-      <div class="section-summary-box">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <span>Destiny</span>
-            <h3>Jupiter</h3>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <span>Departure from:</span>
-            <p>Kennedy Space Center Historic Launch Complex 39A</p>
-          </div>
-          <div class="col-12">
-            <span>Date</span>
-            <h3>27/08/2020</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="container section-select mt-5">
+  <section class="container section-select mt-5">
       <div class="card mt-4">
         <div class="card-body">
           <h4 class="card-title">Rocket A / name / type</h4>
@@ -274,6 +262,29 @@
         </div>
       </div>
     </section>
+
+  <!-- purchase summary -->
+  <section class="section-summary container mt-5">
+    <h1 class="text-white">Checkout Information</h1>
+    <section class="section-summary-info mt-4">
+      <div class="section-summary-box">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <span>Destiny</span>
+            <h3>Jupiter</h3>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <span>Departure from:</span>
+            <p>Kennedy Space Center Historic Launch Complex 39A</p>
+          </div>
+          <div class="col-12">
+            <span>Date</span>
+            <h3>27/08/2020</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    
   </section>
 
 
@@ -303,9 +314,9 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script src="vendor/jquery/jquery-3.3.1.min.js"></script>
-  <script src="vendor/popper/popper.min.js"></script>
-  <script src="vendor/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="../vendor/bootstrap/4.0.0/jquery/bootstrap.min.js"></script>
+  <script src="../vendor/poper/1.12.9/umd/popper.min.js"></script>
+  <!-- <script src="../vendor/bootstrap/4.0.0/jquery/bootstrap.min.js"></script> -->
   <script src="../src/api/rocket-api-1.0.0.js"></script>
   <script src="../src/api/main.js"></script>
 </body>
