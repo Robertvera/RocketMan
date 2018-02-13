@@ -1,22 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
   <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="../vendor/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../vendor/ionicons/2.0.1/css/ionicons.css">
-  <link rel="stylesheet" href="../styles/stars.css">
-  <link rel="stylesheet" href="../styles/style.css">
-
+  <link rel="stylesheet" href="vendor/bootstrap/4.0.0/css/bootstrap.css">
+  <link rel="stylesheet" href="vendor/ionicons/2.0.1/css/ionicons.css">
+  
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -31,19 +26,23 @@
 
 </head>
 
-<body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
+<body>  
+
+  <!-- Star background -->
+  
 
   <div id="root"></div>
 
-  <!-- Star background -->
-  <div id='stars'></div>
-  <div id='stars2'></div>
+    <script src="vendor/jquery/3.3.1/jquery-3.3.1.js"></script>    
+    <script src="vendor/bootstrap/4.0.0/jquery/bootstrap.js"></script>
+    <script src="vendor/popper/1.12.9/umd/popper.min.js"></script>
+  </body>
+  </html>
+  
+  
 
   <!-- Navbar section -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">
       <img src="./images/rocketman_imagotipo_blue.svg">
     </a>
@@ -59,10 +58,10 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- Logo section -->
-  <section class="section-logo text-center w-100">
+  <!-- <section class="section-logo text-center w-100">
     <div class="row">
       <div class="col">
         <img class="mb-4" src="./images/rocketman_logo_blue.svg">
@@ -71,10 +70,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Destination section -->
-  <section class="container section-destination mt-5">
+  <!-- <section class="container section-destination mt-5">
     <h1 class="text-white">Select your destination</h1>
     <div class="row">
       <div class="col-sm-6 mt-4">
@@ -112,12 +111,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Localization section -->
-
-
-  <section class="container section-select mt-5">
+  <!-- <section class="container section-select mt-5">
       <h1 class="text-white">Departures information</h1>
       <div class="card mt-4">
         <div class="card-body">
@@ -144,10 +141,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
   <!-- section-select -->
-  <section class="container section-select mt-5">
+  <!-- <section class="container section-select mt-5">
     <h1 class="text-white">
       Select your Rocket
     </h1>
@@ -262,10 +259,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
   <!-- purchase summary -->
-  <section class="section-summary container mt-5">
+  <!-- <section class="section-summary container mt-5">
     <h1 class="text-white">Checkout Information</h1>
     <section class="section-summary-info mt-4">
       <div class="section-summary-box">
@@ -286,24 +283,24 @@
       </div>
     </section>
     
-  </section>
+  </section> -->
 
 
   <!-- Purchase OK -->
-  <div class="section-purchase-ok">
+  <!-- <div class="section-purchase-ok">
     <div class="row">
       <div></div>
     </div>
     <h1>Your purchase has been created</h1>
     <h1>Your purchase has been created</h1> 
-  </div>
+  </div> -->
 
 
   <!-- continue button -->
-  <div class="section-button container-full">
+  <!-- <div class="section-button container-full">
     <button type="button" class="btn btn-primary btn-lg btn-block">continue</button>
     <div class="shine"></div>
-  </div>
+  </div> -->
 
   <!--
       This HTML file is a template.
@@ -315,10 +312,3 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script src="../vendor/bootstrap/4.0.0/jquery/bootstrap.min.js"></script>
-  <script src="../vendor/poper/1.12.9/umd/popper.min.js"></script>
-  <script src="../src/api/rocket-api-1.0.0.js"></script>
-  <script src="../src/api/main.js"></script>
-</body>
-
-</html>

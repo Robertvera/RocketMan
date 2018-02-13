@@ -25,7 +25,7 @@
 .section-destination .btn-primary {
     border-radius: 0;
 }
-.section-destination .mars.card-body {
+/* .section-destination .mars.card-body {
     background: url("../public/images/mars.jpg") no-repeat center;
     background-size: cover;
 } 
@@ -40,7 +40,7 @@
 .section-destination .uranus.card-body {
     background: url("../public/images/uranus.png") no-repeat center;
     background-size: cover;
-} 
+}  */
 .section-destination .card-title {
     color: #d0cfc5;
 }
