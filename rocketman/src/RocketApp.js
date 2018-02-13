@@ -10,6 +10,19 @@ class RocketApp extends Component {
     super()
 
     this.state = {
+      destination:'',
+      rockets: [],
+      rocketID: [],
+      capsules: [],
+      capsuleID: [],
+      launchpads: [],
+      launchpadID: [],
+      userInfo: {
+        name:'',
+        lastname: '',
+        address: '',
+        gender:''
+      }
 
     }
   }
