@@ -25,22 +25,23 @@
 .section-destination .btn-primary {
     border-radius: 0;
 }
-/* .section-destination .mars.card-body {
-    background: url("../public/images/mars.jpg") no-repeat center;
+.section-destination .mars.card-body {
+    background: url("./images/mars.jpg") no-repeat center;
     background-size: cover;
 } 
+
 .section-destination .moon.card-body {
-    background: url("../public/images/moon2.png") no-repeat center;
+    background: url("./images/moon2.png") no-repeat center;
     background-size: cover;
 } 
 .section-destination .jupiter.card-body {
-    background: url("../public/images/jupiter.png") no-repeat center;
+    background: url("./images/jupiter.png") no-repeat center;
     background-size: cover;
 } 
 .section-destination .uranus.card-body {
-    background: url("../public/images/uranus.png") no-repeat center;
+    background: url("./images/uranus.png") no-repeat center;
     background-size: cover;
-}  */
+} 
 .section-destination .card-title {
     color: #d0cfc5;
 }

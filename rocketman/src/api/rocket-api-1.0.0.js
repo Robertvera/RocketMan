@@ -28,10 +28,10 @@ let rocketApi;
 
             let path = this.baseUrl + "rockets"
 
-            // return this.call(path).then(res => {
-            //     return res
-            // })
-            call(this.path)
+            return this.call(path).then(res => {
+                return res
+            })
+            
         },
 
         /**
@@ -94,3 +94,5 @@ let rocketApi;
         }
     };
 })();
+
+export default rocketApi;
