@@ -6,6 +6,7 @@ import Rockets from './vehicles/rockets';
 
 class Destinations extends Component {
 
+  
     sendDestination = destination => {
         this.props.onClickDestination(destination)
     }
@@ -52,14 +53,13 @@ class Destinations extends Component {
           </div>
         </div>        
       </section>
-      <Rockets setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads}/>
+      <Rockets setRockets = {this.props.setRockets} rockets ={this.props.rockets} setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads}/>
       </div>
 
         )
       
       
     }
-
 }
 
 export default Destinations;
