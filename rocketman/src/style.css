@@ -1,104 +1,115 @@
 /* Gen styles */
+
 .text-white {
-    color: #a1a8c3!important;
+    color: #a1a8c3 !important;
 }
-p, span, label {
+
+p,
+span,
+label {
     color: #ccc;
 }
+
 h1 {
-    margin:0;
+    margin: 0;
     font-size: 1.5rem;
 }
+
 h4 {
     color: #8d97bd;
     font-size: 1.2rem;
 }
+
 .btn-primary {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
     border-radius: 0;
 }
+
 .btn-primary:hover {
     background-color: #198231;
     border-color: #198231;
 }
+
 .icon {
-    font-size:24px;
+    font-size: 24px;
     color: #a1a8c3;
     margin-right: 5px;
 }
+
 .no-padding {
     padding: 0;
 }
 
 /* nav */
-nav img{
+
+nav img {
     width: 40px;
 }
+
 nav.bg-dark {
-    background-color: #273646!important;
+    background-color: #273646 !important;
 }
 
-
-
 /* section-button */
-.section-button{
+
+.section-button {
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-  /* purchase ok */
-  @keyframes stroke {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes scale {
-    0%,
-    100% {
-      transform: none;
-    }
-    50% {
-      transform: scale3d(1.1, 1.1, 1);
-    }
-  }
-  @keyframes fill {
-    100% {
-      box-shadow: inset 0px 0px 0px 30px #7ac142;
-    }
-  }
-  .checkmark__circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-    stroke: #7ac142;
-    fill: none;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-  }
-  .checkmark {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: block;
-    stroke-width: 2;
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    margin: 10% auto;
-    box-shadow: inset 0px 0px 0px #7ac142;
-    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
-  }
-  .checkmark__check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-  }
+/* purchase ok */
 
-  .container .container {
-      margin: 0;
-  }
-  
+@-webkit-keyframes fly {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
+@keyframes fly {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.section-purchase-ok h1>b {
+    color: #63d074
+}
+
+.section-purchase-ok .ion-planet:before {
+    content: "\f343";
+    font-size: 282px;
+}
+
+.section-purchase-ok p {
+    margin-bottom: 0.4rem;
+}
+
+.section-purchase-ok .rocket-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/images/method-draw-image.svg") no-repeat 100px center;
+    -webkit-animation: fly 2.5s linear infinite;
+    animation: fly 2.5s linear infinite;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.section-purchase-ok a {
+    color: #a1a8c3
+}
