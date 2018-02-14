@@ -120,7 +120,7 @@ class Rockets extends Component {
                         </div>
                     )}
             </section>
-            <Departures setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads}/>
+            <Departures setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads} rockets = {this.props.rockets}/>
             </div>
         )
     }
