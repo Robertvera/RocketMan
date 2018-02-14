@@ -12,7 +12,6 @@
   }
   html {
     /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
-    overflow: hidden;
     overflow: scroll;
   }
   body {
@@ -33,7 +32,7 @@
   #stars:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 900px;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -48,7 +47,7 @@
   #stars2:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 900px;
     width: 2px;
     height: 2px;
     background: transparent;

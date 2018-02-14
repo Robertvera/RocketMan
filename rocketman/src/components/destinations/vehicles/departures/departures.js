@@ -71,6 +71,7 @@ class Departures extends Component {
                         </div>
                     </div>
                 </div>
+                <Userdata />
             </section>
 
         )
