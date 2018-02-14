@@ -28,6 +28,14 @@ class RocketApp extends Component {
 
   }
 
+  selectDestination = selectedDestination => {
+    this.setState({
+      destination: selectedDestination
+    })
+  }
+
+  setLaunchpads = launchpadsList => this.setState({launchpads: launchpadsList})
+  
   setRockets = (rockets) => this.setState({ rockets })
 
 
@@ -38,6 +46,7 @@ class RocketApp extends Component {
       <div>
         <div id='stars'></div>
         <div id='stars2'></div>
+
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a className="navbar-brand" href="#">
             <img src="./images/rocketman_imagotipo_blue.svg" />
@@ -53,8 +62,9 @@ class RocketApp extends Component {
             </ul>
           </div>
         </nav>
-        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} />
-      </div>
+
+        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} destination={this.state.destination} onClickDestination={this.selectDestination} setLaunchpads={this.setLaunchpads} launchpads = {this.state.launchpads}/>
+      </div>      
     );
   }
 }

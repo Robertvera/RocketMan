@@ -4,18 +4,8 @@ import './vehicles.css';
 import rocketApi from '../../../api/rocket-api-1.0.0'
 
 class Rockets extends Component {
-
-    constructor() {
-        super()
-    
-        this.state = {
-            pedo:'esepedo'
-          }
-    
-        }
-    
+  
       
-
     componentDidMount = () => {
         this.retrieveRockets();
     }
@@ -128,6 +118,7 @@ class Rockets extends Component {
                         </div>
                     )}
             </section>
+            <Departures setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads}/>
         )
     }
 }
