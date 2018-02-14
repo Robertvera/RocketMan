@@ -143,7 +143,7 @@ class Rockets extends Component {
                 </div>
                 : null}
 
-                <Departures setLaunchpads={this.props.setLaunchpads} launchpads={this.props.launchpads} />
+                <Departures setLaunchpads={this.props.setLaunchpads} launchpads={this.props.launchpads} rockets = {this.props.rockets}/>
             </div>
         )
     }

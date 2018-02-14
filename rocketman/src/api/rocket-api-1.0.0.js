@@ -30,7 +30,7 @@ let rocketApi;
 
             return this.call(path).then(res => {
                 return res
-            })
+            })  
         },
 
         /**
