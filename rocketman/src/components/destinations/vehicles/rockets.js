@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './vehicles.css';
-
 import rocketApi from '../../../api/rocket-api-1.0.0'
+import Departures from './departures/departures'
+
+
 
 class Rockets extends Component {
   
@@ -51,7 +53,7 @@ class Rockets extends Component {
 
 
         return (
-
+            <div>
             <section className="container section-select mt-5">
                 <h1 className="text-white">
                     Select your Rocket
@@ -119,6 +121,7 @@ class Rockets extends Component {
                     )}
             </section>
             <Departures setLaunchpads={this.props.setLaunchpads} launchpads = {this.props.launchpads}/>
+            </div>
         )
     }
 }
