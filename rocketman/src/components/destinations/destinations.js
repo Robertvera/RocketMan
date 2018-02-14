@@ -6,6 +6,14 @@ import Rockets from './vehicles/rockets';
 
 class Destinations extends Component {
 
+
+    render() {
+        return (
+
+              <Rockets setRockets = {this.props.setRockets} rockets ={this.props.rockets}  />
+        
+        )
+    }
 }
 
 export default Destinations;

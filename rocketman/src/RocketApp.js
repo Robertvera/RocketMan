@@ -25,16 +25,20 @@ class RocketApp extends Component {
       }
 
     }
+
   }
 
+  setRockets = (rockets) => this.setState({ rockets })
 
+
+  
 
   render() {
     return (
       <div>
         <div id='stars'></div>
         <div id='stars2'></div>
-        < nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
+        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a className="navbar-brand" href="#">
             <img src="./images/rocketman_imagotipo_blue.svg" />
           </a>
@@ -44,14 +48,13 @@ class RocketApp extends Component {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#">About us
-        </a>
+                <a className="nav-link" href="#">About us</a>
               </li>
             </ul>
           </div>
-        </nav >
+        </nav>
+        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} />
       </div>
-
     );
   }
 }
