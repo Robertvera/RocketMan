@@ -1,0 +1,49 @@
+.parallax { 
+    /* The image used */
+    background-image: url("/images/space1.png");
+
+    /* Set a specific height */
+    height: 500px;     
+    margin-top: 5rem;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .5;
+}
+
+.section-about .container h1 {
+    color: #8a8e8c;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0;
+    padding: 0.7rem;
+    border: 1px solid #bbbbbb;
+    background: transparent;
+    margin: 20px 0;
+}
+
+.parallax2 { 
+    /* The image used */
+    background-image: url("/images/space2.png");
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .5;
+}
+.section-about span {
+    color: #d4d4d4;
+    margin: 0 10px;
+}
+.section-about span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
