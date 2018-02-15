@@ -11,7 +11,7 @@ class Checkout extends Component {
 
         return (
             <div>
-                <Purchaseok  />
+     
             </div>
         )
     }

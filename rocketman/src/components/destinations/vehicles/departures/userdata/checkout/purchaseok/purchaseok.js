@@ -3,7 +3,7 @@ import './purchaseok.css';
 
 function Purchaseok() {
     return <div className="section-purchase-ok container mt-5">
-        <h1 className="text-center text-white">Your purchase has been made <b>successfully</b></h1>
+        <h1 className="text-center text-white">Your purchase has been <b>successfully</b> made</h1>
         <div className="row justify-content-center mt-3 mb-3">
             <div className="col-sm-10 col-md-10 text-center">
                 <i className="icon ion-planet" />

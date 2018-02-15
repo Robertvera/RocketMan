@@ -11,6 +11,11 @@ import Destinations from './components/destinations/destinations';
 
 import Rockets from './components/destinations/vehicles/rockets';
 import Capsules from './components/destinations/vehicles/capsules';
+import Departures from './components/destinations/vehicles/departures/departures';
+import Userdata from './components/destinations/vehicles/departures/userdata/userdata';
+import Checkout from './components/destinations/vehicles/departures/userdata/checkout/checkout';
+import Purchaseok from './components/destinations/vehicles/departures/userdata/checkout/purchaseok/purchaseok';
+
 
 class RocketApp extends Component {
   constructor() {
@@ -19,11 +24,10 @@ class RocketApp extends Component {
     this.state = {
       destination: '',
       rockets: [],
-      rocketID: [],
+      vehicleID: '',
       capsules: [],
-      capsuleID: [],
-      launchpads: [],
-      launchpadID: [],
+      type:'',      
+      // launchpads: [],
       userInfo: {
         name: '',
         lastname: '',
@@ -47,9 +51,16 @@ class RocketApp extends Component {
 
   setCapsules = (capsules) => this.setState({ capsules })
 
-  setRocket = (rocketID) => this.setState({ rocketID: rocketID })
+  setRocket = (rocketID) => this.setState({ vehicleID: rocketID })
 
-  setCapsule = (capsuleID) => this.setState({ capsuleID: capsuleID })
+  setCapsule = (capsuleID) => this.setState({ vehicleID: capsuleID })
+
+  setType = (type) => this.setState({type: type})
+
+  setInfo = (userInfo) =>{
+    console.log(userInfo)
+     this.setState({ userInfo })
+  }
 
 
   render() {
@@ -72,15 +83,27 @@ class RocketApp extends Component {
             )} />
 
             <Route path="/select-capsules" render={() => (
-              <Capsules setCapsules = {this.setCapsules} setCapsule={this.setCapsule} capsules = {this.state.capsules }  launchpads={this.state.capsules} setLaunchpads={this.setLaunchpads} />
+              <Capsules setCapsules = {this.setCapsules} setCapsule={this.setCapsule} setType={this.setType} vehicleID ={this.state.vehicleID} capsules = {this.state.capsules }  setLaunchpads={this.setLaunchpads} />
             )} />
 
             <Route path="/select-rockets" render={() => (
-              <Rockets setRockets={this.setRockets} setRocket={this.setRocket} rockets={this.state.rockets} launchpads={this.state.capsules} setLaunchpads={this.setLaunchpads} />
+              <Rockets setRockets={this.setRockets} setRocket={this.setRocket} setType={this.setType} vehicleID ={this.state.vehicleID} rockets={this.state.rockets} setLaunchpads={this.setLaunchpads} />
             )} />
+
+            <Route path="/departures" render={() => (
+             <Departures setLaunchpads ={this.setLaunchpads} vehicleID = {this.state.vehicleID} destination = {this.state.destination}/>
+           )} />
 
             <Route path="/about-us" render={() => (
               <About />
+            )} />
+
+            <Route path="/userdata" render={() => (
+              <Userdata setInfo={this.setInfo} />
+            )} />
+
+            <Route path="/checkout" render={() => (
+              <Checkout />
             )} />
 
           </div>

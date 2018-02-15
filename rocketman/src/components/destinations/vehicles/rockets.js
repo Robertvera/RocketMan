@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './vehicles.css';
 import rocketApi from '../../../api/rocket-api-1.0.0'
-import Departures from './departures/departures'
+
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -55,11 +56,13 @@ class Rockets extends Component {
         })
     }
 
-    retrieveRocket = (e) => {
+    retrieveRocket = (e,type) => {
         var rocketName = e.target.getAttribute('data-rocket')
         this.props.setRocket(rocketName)
         
         this.setState({ visibleContinue: true })
+
+        this.props.setType(type)
 
     }
 
@@ -79,7 +82,7 @@ class Rockets extends Component {
                                 <div className="card-body">
 
                                     <label className="radio-button">
-                                        <input onClick={this.retrieveRocket} type="radio" data-rocket={rocket.name} className="option-input radio" name="example" />
+                                        <input onClick={(e)=>{this.retrieveRocket(e,'rocket')}} type="radio" data-rocket={rocket.name} className="option-input radio" name="example" />
                                     </label>
 
                                     <h4 className="card-title">{rocket.name}</h4>
@@ -138,12 +141,12 @@ class Rockets extends Component {
 
                 {this.state.visibleContinue ? 
                 <div className="section-button container-full">
-                    <button type="button" className="btn btn-primary btn-lg btn-block">continue</button>
+                    <NavLink className="btn btn-primary btn-lg btn-block" to="/departures">Continue</NavLink>
                     <div className="shine" />
                 </div>
                 : null}
 
-                <Departures setLaunchpads={this.props.setLaunchpads} launchpads={this.props.launchpads} rockets = {this.props.rockets}/>
+
             </div>
         )
     }
