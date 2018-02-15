@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './vehicles.css';
 import rocketApi from '../../../api/rocket-api-1.0.0'
-import Departures from './departures/departures'
+import { NavLink } from 'react-router-dom'
 
 class Capsules extends Component {
 
@@ -52,11 +52,12 @@ class Capsules extends Component {
         })
     }
 
-    retrieveCapsule = (e) => {
+    retrieveCapsule = (e,type) => {
         var capsuleName = e.target.getAttribute('data-capsule')
         this.props.setCapsule(capsuleName)
 
         this.setState({ visibleContinue: true })
+        this.props.setType(type)
 
     }
 
@@ -73,7 +74,7 @@ class Capsules extends Component {
                         <div className="card-body">
 
                             <label className="radio-button">
-                                <input onClick={this.retrieveCapsule} data-capsule={capsule.name} type="radio" className="option-input radio" name="example" />
+                                <input onClick={(e)=>{this.retrieveCapsule(e,'capsule')}} data-capsule={capsule.name} type="radio" className="option-input radio" name="example" />
                             </label>
 
 
@@ -132,7 +133,7 @@ class Capsules extends Component {
             </section>
             {this.state.visibleContinue ?
             <div className="section-button container-full">
-                <button type="button" className="btn btn-primary btn-lg btn-block">continue</button>
+                <NavLink className="btn btn-primary btn-lg btn-block" to="/departures">Continue</NavLink>
                 <div className="shine" />
             </div>
             : null}

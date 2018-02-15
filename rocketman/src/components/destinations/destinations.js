@@ -24,7 +24,7 @@ class Destinations extends Component {
                 <div className="mars card-body">
                   <h5 className="card-title">Mars</h5>
 
-                  <NavLink className="btn btn-primary" to="/select-capsules">Let's go to Mars
+                  <NavLink className="btn btn-primary" to="/select-capsules" onClick={(e)=>{e.preventDefault;this.sendDestination('Mars')}}>Let's go to Mars
                   </NavLink>
 
                 </div>
@@ -35,7 +35,7 @@ class Destinations extends Component {
                 <div className="moon card-body">
                   <h5 className="card-title">Moon</h5>
 
-                  <NavLink className="btn btn-primary" to="/select-capsules">Let's go to Moon
+                  <NavLink className="btn btn-primary" to="/select-capsules" onClick={(e)=>{e.preventDefault;this.sendDestination('Moon')}}>Let's go to Moon
                   </NavLink>
 
                 </div>
@@ -48,7 +48,7 @@ class Destinations extends Component {
                 <div className="jupiter card-body">
                   <h5 className="card-title">Jupiter</h5>
 
-                  <NavLink className="btn btn-primary" to="/select-rockets">Let's go to Jupiter
+                  <NavLink className="btn btn-primary" to="/select-rockets" onClick={(e)=>{e.preventDefault;this.sendDestination('Jupiter')}}>Let's go to Jupiter
                   </NavLink>
 
                 </div>
@@ -59,7 +59,7 @@ class Destinations extends Component {
                 <div className="uranus card-body">
                   <h5 className="card-title">Uranus</h5>
 
-                  <NavLink className="btn btn-primary" to="/select-rockets">Let's go to Uranus
+                  <NavLink className="btn btn-primary" to="/select-rockets" onClick={(e)=>{e.preventDefault;this.sendDestination('Uranus')}}>Let's go to Uranus
                   </NavLink>
 
                 </div>
