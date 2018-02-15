@@ -21,7 +21,8 @@ class Departures extends Component {
         super(props)
 
         this.state = {
-            visible: false
+            visible: false,
+            launchpadID: ''
         }
     }
 
@@ -50,29 +51,9 @@ class Departures extends Component {
         return launchpadsRocket
     }
 
-
-
-    //  map(coord) {
-
-    //     ReactMapboxGl.accessToken = 'pk.eyJ1Ijoicm9iZXJ0dmVyYSIsImEiOiJjamRrZDNpYmYwdWF4MzNwMmhwdWVwOWkyIn0.d5enXKznUZ7RdQnbkxFJTg';
-    //     var map = new ReactMapboxGl.Map({
-    //       container: 'map', // container id
-    //       style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    //       center: [coord[0].long,coord[0].lat], // starting position [lng, lat]
-    //       zoom: 3 // starting zoom
-    //     });
-
-    //     for (let i = 0; i < coord.length; i++) {
-    //       var marker = new ReactMapboxGl.Marker()
-    //         .setLngLat([coord[i].long, coord[i].lat])
-    //         .addTo(map);
-
-    //     }
-    //   }
     setCenter(coords) {
         return [coords[0].long, coords[0].lat]
     }
-
 
 
     render() {
@@ -81,9 +62,13 @@ class Departures extends Component {
             accessToken: "pk.eyJ1Ijoicm9iZXJ0dmVyYSIsImEiOiJjamRrZDNpYmYwdWF4MzNwMmhwdWVwOWkyIn0.d5enXKznUZ7RdQnbkxFJTg",
         });
 
-        const show = () => {
-            this.setState({ visible: true })
-        }
+        // const show = () => {
+        //     this.setState({ visible: true })
+        // }
+
+        // function throwPopup(long, lat) {
+
+        // }
 
 
         let markers = this.matchRocket('Falcon 9', this.props.launchpads)
@@ -107,26 +92,28 @@ class Departures extends Component {
                                             center={this.setCenter(this.matchRocket('Falcon 9', this.props.launchpads))}
                                             zoom={[3]}
                                         >
-                                            {markers.map(marker =>
-                                                <Marker
-                                                    coordinates={[marker.long, marker.lat]}
-                                                    anchor="bottom"
-                                                    onClick={e => {
-                                                        e.preventDefault()
-                                                        show()
-                                                    }}
-                                                >
-                                                    <img src='http://www.worldofbuzz.com/wp-content/uploads/2016/11/rocket-2.png' />
-                                                </Marker>
-                                            )}
-
-                                            {/* {this.state.visible?
-                                            <Popup
-                                                coordinates={}
+                                            <Layer
+                                                type="symbol"
+                                                id="marker"
+                                                layout={{ "icon-image": "rocket-15" }}
                                             >
-                                                <h1>Popup</h1>
-                                            </Popup>
-                                            :null} */}
+                                                {markers.map(marker =>
+                                                    <Feature
+                                                        key={marker.id}
+                                                        coordinates={[marker.long, marker.lat]}
+                                                        onClick={() => { this.setState({ launchpadID: marker.id }) }}
+                                                        onMouseEnter={() => {
+                                                            return (<Popup
+                                                                coordinates={[marker.long, marker.lat]}
+                                                                anchor='top'
+                                                            >
+                                                                <h1>Popup</h1>
+                                                            </Popup>)
+                                                        }
+                                                        }
+                                                    />
+                                                )}
+                                            </Layer>
                                         </Map>
                                         :
                                         undefined

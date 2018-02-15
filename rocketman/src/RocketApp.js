@@ -63,7 +63,7 @@ class RocketApp extends Component {
           </div>
         </nav>
 
-        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} destination={this.state.destination} onClickDestination={this.selectDestination} setLaunchpads={this.setLaunchpads} launchpads = {this.state.launchpads}/>
+        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} destination={this.state.destination} onClickDestination={this.selectDestination} setLaunchpads={this.setLaunchpads} launchpads = {this.state.launchpads} launchpadID = {this.state.launchpadID}/>
       </div>      
     );
   }
