@@ -85,7 +85,6 @@ class RocketApp extends Component {
 
           </div>
         </HashRouter>
-
       </div>
     );
   }
