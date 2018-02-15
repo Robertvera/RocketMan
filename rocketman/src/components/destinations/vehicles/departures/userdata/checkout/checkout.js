@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import './checkout.css';
 
-import PurchaseOK from './purchaseok/purchaseok';
+import Purchaseok from './purchaseok/purchaseok';
 
 class Checkout extends Component {
+
+
+
+    render() {
+
+        return (
+            <div>
+                <Purchaseok  />
+            </div>
+        )
+    }
 
 }
 

@@ -2,15 +2,22 @@ import React, { Component } from 'react';
 import './style.css';
 import './stars.css';
 
+// import react-router
+import { Route, HashRouter } from 'react-router-dom'
+
+import Menu from './components/destinations/menu';
 import About from './components/about-us/about';
 import Destinations from './components/destinations/destinations';
+
+import Rockets from './components/destinations/vehicles/rockets';
+import Capsules from './components/destinations/vehicles/capsules';
 
 class RocketApp extends Component {
   constructor() {
     super()
 
     this.state = {
-      destination:'',
+      destination: '',
       rockets: [],
       rocketID: [],
       capsules: [],
@@ -18,10 +25,10 @@ class RocketApp extends Component {
       launchpads: [],
       launchpadID: [],
       userInfo: {
-        name:'',
+        name: '',
         lastname: '',
         address: '',
-        gender:''
+        gender: ''
       }
 
     }
@@ -34,12 +41,16 @@ class RocketApp extends Component {
     })
   }
 
-  setLaunchpads = launchpadsList => this.setState({launchpads: launchpadsList})
-  
+  setLaunchpads = launchpadsList => this.setState({ launchpads: launchpadsList })
+
   setRockets = (rockets) => this.setState({ rockets })
 
+  setCapsules = (capsules) => this.setState({ capsules })
 
-  
+  setRocket = (rocketID) => this.setState({ rocketID: rocketID })
+
+  setCapsule = (capsuleID) => this.setState({ capsuleID: capsuleID })
+
 
   render() {
     return (
@@ -47,24 +58,34 @@ class RocketApp extends Component {
         <div id='stars'></div>
         <div id='stars2'></div>
 
-        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a className="navbar-brand" href="#">
-            <img src="./images/rocketman_imagotipo_blue.svg" />
-          </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#">About us</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        
 
-        <Destinations setRockets = {this.setRockets} rockets= {this.state.rockets} destination={this.state.destination} onClickDestination={this.selectDestination} setLaunchpads={this.setLaunchpads} launchpads = {this.state.launchpads} launchpadID = {this.state.launchpadID}/>
-      </div>      
+        <HashRouter>
+          <div>
+
+            <Route path="/" render={() => (
+              <Menu />
+            )} />
+
+            <Route exact path="/" render={() => (
+              <Destinations setCapsules={this.setCapsules} capsules={this.state.capsules} destination={this.state.destination} onClickDestination={this.selectDestination} launchpads={this.state.capsules} />
+            )} />
+
+            <Route path="/select-capsules" render={() => (
+              <Capsules setCapsules = {this.setCapsules} setCapsule={this.setCapsule} capsules = {this.state.capsules }  launchpads={this.state.capsules} setLaunchpads={this.setLaunchpads} />
+            )} />
+
+            <Route path="/select-rockets" render={() => (
+              <Rockets setRockets={this.setRockets} setRocket={this.setRocket} rockets={this.state.rockets} launchpads={this.state.capsules} setLaunchpads={this.setLaunchpads} />
+            )} />
+
+            <Route path="/about-us" render={() => (
+              <About />
+            )} />
+
+          </div>
+        </HashRouter>
+      </div>
     );
   }
 }
