@@ -12,6 +12,8 @@ import Destinations from './components/destinations/destinations';
 import Rockets from './components/destinations/vehicles/rockets';
 import Capsules from './components/destinations/vehicles/capsules';
 
+import Departures from './components/destinations/vehicles/departures/departures';
+
 class RocketApp extends Component {
   constructor() {
     super()
@@ -82,6 +84,10 @@ class RocketApp extends Component {
             <Route path="/about-us" render={() => (
               <About />
             )} />
+
+            <Route path="/departures" render={() => (
+              <Departures rocketID = {this.state.rocketId} capsuleID = {this.state.capsuleID}/>
+            )} />    
 
           </div>
         </HashRouter>

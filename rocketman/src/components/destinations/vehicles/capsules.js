@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './vehicles.css';
 import rocketApi from '../../../api/rocket-api-1.0.0'
 import Departures from './departures/departures'
+import { NavLink } from 'react-router-dom'
 
 class Capsules extends Component {
 
@@ -132,7 +133,7 @@ class Capsules extends Component {
             </section>
             {this.state.visibleContinue ?
             <div className="section-button container-full">
-                <button type="button" className="btn btn-primary btn-lg btn-block">continue</button>
+            <NavLink className="btn btn-primary btn-lg btn-block" to="/departures">Continue</NavLink>
                 <div className="shine" />
             </div>
             : null}

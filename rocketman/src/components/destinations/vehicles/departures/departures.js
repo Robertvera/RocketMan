@@ -15,6 +15,17 @@ class Coordinates {
     }
 }
 
+class capsuleLaunchpads {
+    constructor (id, fullname, status, location, vehicles_launched, details) {
+        this.id = id,
+        this.fullname = fullname,
+        this.status = status,
+        this.location = location,
+        this.vehicles_launched = vehicles_launched,
+        this.details = details
+    }
+}
+
 class Departures extends Component {
 
     constructor(props) {
@@ -26,7 +37,8 @@ class Departures extends Component {
     }
 
     componentDidMount = () => {
-        this.retrieveLaunchpads();
+        this.retrieveLaunchpads();        
+
     }
 
     retrieveLaunchpads = () => {
@@ -37,11 +49,16 @@ class Departures extends Component {
             })
     }
 
-    matchRocket = (rocket, launchpadsList) => {
+    retrieveCapsuleLaunchpads = () => {
+        const capsuleLaunchpads = new capsuleLaunchpads('caps','El Bolson Space Launch Complex','active',{name:'El Bolson',region:'Argentina',latitude:-41.983384,longitude:-71.5728385},['Dragon 1','Dragon 2','Crew Dragon'],'Argentina Space Department historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.')
+        return capsuleLaunchpads
+    }
+
+    matchRocket = (vehicle, launchpadsList) => {
         let launchpadsRocket = []
         for (let i = 0; i < launchpadsList.length; i++) {
             for (let j = 0; j < launchpadsList[i].vehicles_launched.length; j++) {
-                if (rocket == launchpadsList[i].vehicles_launched[j]) {
+                if (vehicle == launchpadsList[i].vehicles_launched[j]) {
                     launchpadsRocket.push(new Coordinates(launchpadsList[i].id, launchpadsList[i].location.latitude, launchpadsList[i].location.longitude))
                 }
             }
@@ -50,25 +67,6 @@ class Departures extends Component {
         return launchpadsRocket
     }
 
-
-
-    //  map(coord) {
-
-    //     ReactMapboxGl.accessToken = 'pk.eyJ1Ijoicm9iZXJ0dmVyYSIsImEiOiJjamRrZDNpYmYwdWF4MzNwMmhwdWVwOWkyIn0.d5enXKznUZ7RdQnbkxFJTg';
-    //     var map = new ReactMapboxGl.Map({
-    //       container: 'map', // container id
-    //       style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    //       center: [coord[0].long,coord[0].lat], // starting position [lng, lat]
-    //       zoom: 3 // starting zoom
-    //     });
-
-    //     for (let i = 0; i < coord.length; i++) {
-    //       var marker = new ReactMapboxGl.Marker()
-    //         .setLngLat([coord[i].long, coord[i].lat])
-    //         .addTo(map);
-
-    //     }
-    //   }
     setCenter(coords) {
         return [coords[0].long, coords[0].lat]
     }
@@ -85,8 +83,14 @@ class Departures extends Component {
             this.setState({ visible: true })
         }
 
+        const cLaunchpads = this.retrieveCapsuleLaunchpads()
 
-        let markers = this.matchRocket('Falcon 9', this.props.launchpads)
+        if (this.props.capsuleId) {
+            let markers = [cLaunchpads.location.longitude,cLaunchpads.location.latitude]
+        } else {
+            let markers = this.matchRocket(this.props.rocketId, this.props.launchpads)
+        }
+        
 
         return (
 
