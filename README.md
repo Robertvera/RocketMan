@@ -7,8 +7,10 @@ Single page application, ecommerce like. RocketMan offers space trips, the custo
 
 ## STYLES
 
-- [MOCKUP](docs/RocketMan-wireframe.png)
-- [HTML AND CSS](docs/RocketMan-design.png)
+- MOCKUP ![alt text](https://raw.githubusercontent.com/Robertvera/RocketMan/rama2/docs/RocketMan-wireframe.png "Mockup") 
+
+- HTML AND CSS ![alt text](https://raw.githubusercontent.com/Robertvera/RocketMan/rama2/docs/RocketMan-design.png "HTML AND CSS") 
+
 
 ## APIS
 
@@ -17,7 +19,7 @@ Single page application, ecommerce like. RocketMan offers space trips, the custo
 
 ## TECHNOLOGIES
 
-- CSS FRAMEWORK: BOOTSRAP 4
+- CSS FRAMEWORK: BOOTSTRAP 4
 - REACT
 - REACT ROUTER
 - JASMINE
