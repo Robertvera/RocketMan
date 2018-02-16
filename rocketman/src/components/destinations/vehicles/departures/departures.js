@@ -102,7 +102,20 @@ class Departures extends Component {
             showLaunchpad: true
         })
 
+        var element = document.getElementById("launchpad-info");
+        element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+
     }
+
+
+    // sendlaunchpadName = () => {
+    //     let launchpadName = this.state.launchpadName
+    //     this.props.setlaunchpadName(launchpadName)
+    // }
+    
+        onToggleHover=(cursor, { map }) => {
+        map.getCanvas().style.cursor = cursor;
+      }
 
     sendlaunchpadName = () => {
         let launchpadName = this.state.launchpadName
@@ -166,7 +179,7 @@ class Departures extends Component {
                                                 >
                                                     {markers.map(marker =>
                                                         <Feature
-                                                            key={marker.id}
+                                                            key={marker.id}                                                            
                                                             coordinates={[marker.long, marker.lat]}
                                                             onClick={() => {
                                                                 this.setDeparture(marker)
@@ -174,6 +187,8 @@ class Departures extends Component {
                                                                 this.sendlocationRegion()
                                                                 this.sendlocationName()
                                                             }}
+                                                            onMouseEnter={this.onToggleHover.bind(this, 'pointer')}
+                                                            onMouseLeave={this.onToggleHover.bind(this, '')}
                                                         />
                                                     )}
                                                 </Layer>
