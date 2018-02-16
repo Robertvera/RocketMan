@@ -91,7 +91,7 @@ class RocketApp extends Component {
             )} />
 
             <Route path="/departures" render={() => (
-             <Departures setLaunchpads ={this.setLaunchpads} vehicleID = {this.state.vehicleID} destination = {this.state.destination}/>
+             <Departures setLaunchpads ={this.setLaunchpads} vehicleID = {this.state.vehicleID}  destination={this.state.destination}/>
            )} />
 
             <Route path="/about-us" render={() => (
@@ -103,8 +103,13 @@ class RocketApp extends Component {
             )} />
 
             <Route path="/checkout" render={() => (
-              <Checkout />
+              <Checkout destination={this.state.destination} type={this.state.type} vehicleID={this.state.vehicleID} userInfo={this.state.userInfo}/>
             )} />
+
+            <Route path="/purchaseok" render={() => (
+              <Purchaseok />
+            )} />
+
 
           </div>
         </HashRouter>

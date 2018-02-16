@@ -1,8 +1,10 @@
 /* section-summary */
 .section-summary h3 {
     color: #a1a8c3;
-    font-size: 2rem;
+    margin-top: 3px;
+    font-size: 1.3rem;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .section-summary-info{
     border-radius: 0;
@@ -14,4 +16,21 @@
     background: #283645;
     border-radius:0;
     padding: 0.7rem;
+}
+.section-price {
+    margin-bottom: 7rem !important;
+}
+.section-price h1 {
+    border: 1px solid #6f6f6f;
+    color: #a1a8c3;
+}
+.section-summary-button .btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 0;
+}
+.section-summary-button .btn-primary:hover {
+    background-color: #198231;
+    border-color: #198231;
 }
