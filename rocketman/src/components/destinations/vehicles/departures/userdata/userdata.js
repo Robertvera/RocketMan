@@ -47,40 +47,36 @@ class Userdata extends Component {
                 <div className="card-body">
                     <div className="container">
                         <div className="row">
-                            <div className="no-padding col-sm-12 col-md-3 col-lg-3">
-                                <p><h5 classname="card-title">User name</h5></p>
-                                <p><input type="text" placeholder="Name" id="username" onChange={this.keepName}
+                            <form className="form row">
+                            <div className="col-sm-6">
+                                <p><input type="text" className="form-control" placeholder="Name" id="username" onChange={this.keepName}
                                     value={this.state.query}
                                 /></p>
-                            </div>
-                            
-                            <div className="no-padding col-sm-12 col-md-3 col-lg-3">
-                                <p><h5 classname="card-title">Last name</h5></p>
-                                <p><input type="text" placeholder="Lastname" id="userlastname" onChange={this.keepLastname}
+                                <p><input type="text" className="form-control" placeholder="Lastname" id="userlastname" onChange={this.keepLastname}
                                     value={this.state.query}/></p>
                             </div>
                             
-                            <div className="no-padding col-sm-12 col-md-3 col-lg-3">
-                                <p><h5 classname="card-title">Address</h5></p>
-                                <p><input type="text" placeholder="Address" id="address" onChange={this.keepAddress}
+                            <div className="col-sm-6">
+                                <p><input type="text" className="form-control" placeholder="City" id="address" onChange={this.keepAddress}
                                     value={this.state.query} /></p>
-                            </div>
-                            
-                            <div className="no-padding col-sm-12 col-md-3 col-lg-3">
-                                <p><h5 classname="card-title">Gender</h5></p>
-                                <p><input type="text" placeholder="Gender" id="gender" onChange={this.keepGender} 
+                                <p><input type="text" className="form-control" placeholder="Gender" id="gender" onChange={this.keepGender} 
                                     value={this.state.query}/></p>
                             </div>
-                            
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
+
+
             <div className="section-button container-full">
                 <NavLink onClick={this.sendInfo} className="btn btn-primary btn-lg btn-block" to="/checkout">Continue</NavLink>
                 <div className="shine" />
+            </div>
+
+            <div className="rocket1">
             </div>
         
         </div>

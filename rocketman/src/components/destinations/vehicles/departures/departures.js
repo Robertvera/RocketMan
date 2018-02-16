@@ -9,17 +9,20 @@ import { NavLink } from 'react-router-dom'
 
 
 class Coordinates {
-    constructor(id, lat, long) {
-        this.id = id,
+    constructor(fullname, lat, long, details, location, region) {
+        this.fullname = fullname,
             this.lat = lat,
-            this.long = long
+            this.long = long,
+            this.details = details,
+            this.location = location,
+            this.region = region
     }
 }
 
 class capsuleLaunchpads {
     constructor(id, fullname, status, location, vehicles_launched, details) {
         this.id = id,
-            this.fullname = fullname,
+            this.full_name = fullname,
             this.status = status,
             this.location = location,
             this.vehicles_launched = vehicles_launched,
@@ -33,8 +36,12 @@ class Departures extends Component {
         super(props)
 
         this.state = {
-            visible: false,
-            launchpadID: '',
+            showMap: true,
+            showLaunchpad: false,
+            launchpadName: '',
+            locationName: '',
+            locationRegion: '',
+            launchpadDetails: '',
             launchpads: []
         }
     }
@@ -61,7 +68,7 @@ class Departures extends Component {
         for (let i = 0; i < launchpadsList.length; i++) {
             for (let j = 0; j < launchpadsList[i].vehicles_launched.length; j++) {
                 if (rocket == launchpadsList[i].vehicles_launched[j]) {
-                    launchpadsRocket.push(new Coordinates(launchpadsList[i].id, launchpadsList[i].location.latitude, launchpadsList[i].location.longitude))
+                    launchpadsRocket.push(new Coordinates(launchpadsList[i].full_name, launchpadsList[i].location.latitude, launchpadsList[i].location.longitude, launchpadsList[i].details, launchpadsList[i].location.name, launchpadsList[i].location.region))
                 }
             }
 
@@ -71,11 +78,10 @@ class Departures extends Component {
 
     matchCapsule = (capsule, launchpadsList) => {
         let launchpadsCapsule = []
-        console.log(launchpadsList)
         for (let i = 0; i < launchpadsList.length; i++) {
             for (let j = 0; j < launchpadsList[i].vehicles_launched.length; j++) {
                 if (capsule == launchpadsList[i].vehicles_launched[j]) {
-                    launchpadsCapsule.push(new Coordinates(launchpadsList[i].id, launchpadsList[i].location.latitude, launchpadsList[i].location.longitude))
+                    launchpadsCapsule.push(new Coordinates(launchpadsList[i].full_name, launchpadsList[i].location.latitude, launchpadsList[i].location.longitude, launchpadsList[i].details, launchpadsList[i].location.name, launchpadsList[i].location.region))
                 }
             }
         }
@@ -86,6 +92,23 @@ class Departures extends Component {
     setCenter = (coords) => {
         return [coords[0].long, coords[0].lat]
     }
+
+    setDeparture = (marker) => {
+        this.setState({
+            launchpadName: marker.fullname,
+            locationName: marker.location,
+            locationRegion: marker.region,
+            launchpadDetails: marker.details,
+            showLaunchpad: true
+        })
+
+    }
+
+    // sendlaunchpadName = () => {
+    //     let launchpadName = this.state.launchpadName
+    //     this.props.setlaunchpadName(launchpadName)
+    // }
+
 
 
     render() {
@@ -111,7 +134,7 @@ class Departures extends Component {
         return (
             <div>
 
-                <section className="container section-select mt-5">
+                <section className="container section-select section-departures mt-5">
                     <h1 className="text-white">Departures information</h1>
                     <div className="card mt-4">
                         <div className="card-body">
@@ -137,7 +160,10 @@ class Departures extends Component {
                                                         <Feature
                                                             key={marker.id}
                                                             coordinates={[marker.long, marker.lat]}
-                                                            onClick={() => { this.setState({ launchpadID: marker.id }) }}
+                                                            onClick={() => {
+                                                                this.setDeparture(marker)
+                                                                {/* this.sendlaunchpadName() */}
+                                                            }}
                                                         />
                                                     )}
                                                 </Layer>
@@ -146,16 +172,45 @@ class Departures extends Component {
                                             undefined
                                         }
                                     </div>
+
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {(this.state.showLaunchpad) ?
+                        <div className="card mt-4 card-departure-info">
+                            <div className="card-body">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="no-padding col-sm-12 col-md12 col-lg-12" id="launchpad-info">
+                                            <h1>{this.state.launchpadName}</h1>
+                                            <h5>{this.state.locationName}, {this.state.locationRegion}</h5>
+                                            <h4>Description:</h4>
+                                            <p>{this.state.launchpadDetails}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        :
+                        undefined
+                    }
+
 
                 </section>
+                {(this.state.showLaunchpad) ?
                 <div className="section-button container-full">
-                    <NavLink className="btn btn-primary btn-lg btn-block" to="/userdata">Continue</NavLink>
-                    <div className="shine" />
-                </div>
+                                    <NavLink className="btn btn-primary btn-lg btn-block" to="/userdata">Continue</NavLink>
+                                    <div className="shine" />
+                                </div>:undefined}
+
+
             </div>
 
 

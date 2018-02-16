@@ -10,3 +10,13 @@
     background:#283645;
     height: 100%;
 }
+.section-departures h5 {
+    color: #75d0f0;
+    margin-top: 0.8rem;
+}
+.section-departures h1 {
+    color: #75d0f0;
+}
+.section-departures .card-departure-info {
+    margin-bottom: 10rem;
+}
