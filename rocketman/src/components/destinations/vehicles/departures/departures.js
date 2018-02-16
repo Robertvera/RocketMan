@@ -107,6 +107,7 @@ class Departures extends Component {
 
     }
 
+
     // sendlaunchpadName = () => {
     //     let launchpadName = this.state.launchpadName
     //     this.props.setlaunchpadName(launchpadName)
@@ -116,7 +117,20 @@ class Departures extends Component {
         map.getCanvas().style.cursor = cursor;
       }
 
+    sendlaunchpadName = () => {
+        let launchpadName = this.state.launchpadName
+        this.props.setlaunchpadName(launchpadName)
+    }
 
+    sendlocationRegion = () => {
+        let locationRegion = this.state.locationRegion
+        this.props.setlocationRegion(locationRegion)
+    }
+
+    sendlocationName = () => {
+        let locationName = this.state.locationName
+        this.props.setlocationName(locationName)
+    }
 
     render() {
 
@@ -169,7 +183,9 @@ class Departures extends Component {
                                                             coordinates={[marker.long, marker.lat]}
                                                             onClick={() => {
                                                                 this.setDeparture(marker)
-                                                                {/* this.sendlaunchpadName() */}
+                                                                this.sendlaunchpadName()
+                                                                this.sendlocationRegion()
+                                                                this.sendlocationName()
                                                             }}
                                                             onMouseEnter={this.onToggleHover.bind(this, 'pointer')}
                                                             onMouseLeave={this.onToggleHover.bind(this, '')}

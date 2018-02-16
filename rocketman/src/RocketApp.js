@@ -33,7 +33,10 @@ class RocketApp extends Component {
         lastname: '',
         address: '',
         gender: ''
-      }
+      },
+      launchpadName: '',
+      locationRegion:'',
+      locationName: ''
 
     }
 
@@ -58,10 +61,20 @@ class RocketApp extends Component {
   setType = (type) => this.setState({type: type})
 
   setInfo = (userInfo) =>{
-    console.log(userInfo)
      this.setState({ userInfo })
   }
 
+  setlaunchpadName= (launchpadName) =>{
+    this.setState({ launchpadName })
+ }
+
+ setlocationRegion= (locationRegion) =>{
+  this.setState({ locationRegion })
+}
+
+setlocationName= (locationName) =>{
+  this.setState({ locationName })
+}
 
   render() {
     return (
@@ -91,7 +104,7 @@ class RocketApp extends Component {
             )} />
 
             <Route path="/departures" render={() => (
-             <Departures setLaunchpads ={this.setLaunchpads} vehicleID = {this.state.vehicleID}  destination={this.state.destination}/>
+             <Departures setlaunchpadName ={this.setlaunchpadName} setlocationRegion ={this.setlocationRegion} setlocationName ={this.setlocationName} vehicleID = {this.state.vehicleID}  destination={this.state.destination}/>
            )} />
 
             <Route path="/about-us" render={() => (
@@ -103,7 +116,7 @@ class RocketApp extends Component {
             )} />
 
             <Route path="/checkout" render={() => (
-              <Checkout destination={this.state.destination} type={this.state.type} vehicleID={this.state.vehicleID} userInfo={this.state.userInfo}/>
+              <Checkout setInfo={this.setInfo} launchpadName={this.state.launchpadName} locationRegion={this.state.locationRegion} locationName ={this.state.locationName} destination={this.state.destination} type={this.state.type} vehicleID={this.state.vehicleID} userInfo={this.state.userInfo}/>
             )} />
 
             <Route path="/purchaseok" render={() => (
